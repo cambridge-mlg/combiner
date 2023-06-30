@@ -1,0 +1,20 @@
+# model:
+dim_in: 2
+dim_out: 3
+dim_emb: 64
+dim_hid: 48
+num_layers: 6
+w0: 30.0
+c: 6.0
+weight_kl: 0.0000005
+std_init: -10.0
+init_std_scale: 0.5
+
+# training:
+train_dir: PATH_CLIC
+num_training: 128 # number of training data used to learn model prior
+num_iters: 200 # number of variational optimization in each epoch
+learning_rate: 0.0001
+num_epoch: 96 
+save_interval: 8
+    

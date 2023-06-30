@@ -1,0 +1,30 @@
+# model:
+dim_in: 2
+dim_out: 3
+dim_emb: 64
+dim_hid: 48
+num_layers: 6
+w0: 30.0
+c: 6.0
+weight_kl: 0.0000005
+std_init: -10.0
+init_std_scale: 0.5
+
+# training:
+train_dir: PATH_CLIC    # change it to your training set path
+num_training: 128   # number of training images used to learn the model prior
+num_epoch: 96   # epoch number for loading the model prior
+
+# testing (learn posterior)
+test_dir: PATH_Kodak    # change it to your Kodak dataset path
+learning_rate: 0.0001
+num_test: 24
+num_iters: 25000   # number of variational optimization in each epoch
+beta_adjust_interval: 100  
+
+# practical coding
+seed_rec: 22
+kl2_budget: 16
+buffer_range: 0.2   # when adjust beta, set a buffer area.
+adjust_beta_coef: 1.1  
+max_group_size: 25

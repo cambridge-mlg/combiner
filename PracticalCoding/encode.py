@@ -71,7 +71,7 @@ def progressive_encode(args, model_prior, groups):
         os.remove(bin_file_name)
         
     with open(bin_file_name, "wb") as f:
-        print(f"Image height: {img_shape[1]}, width{img_shape[1]}")
+        print(f"Image height: {img_shape[1]}, width: {img_shape[1]}")
         f.write(struct.pack('H', img_shape[1]))
         f.write(struct.pack('H', img_shape[2]))
 

@@ -25,7 +25,7 @@ We recommend using cropped patches as training set to learn the model prior. The
 		|-- img2.png
 		...
 
-To align with the resolution of Kodak, the training images should be randomly cropped with 512x768 or 768x512 patches.
+To align with the resolution of Kodak, the training images should be randomly cropped into 512x768 or 768x512 patches.
 
 ## Running the code
 

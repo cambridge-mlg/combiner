@@ -9,7 +9,7 @@ import numpy as np
 
 import utils
 from models import SirenPosterior
-from PracticalCoding.rec import prior_samples
+from PracticalCoding.irec import prior_samples
 
 def load_single_image(args): # only for calculating the PNSR
     transform = torchvision.transforms.ToTensor()
@@ -25,7 +25,7 @@ def generate_prior_samples(args):
     return samples_list
 
 
-def decode_rec(args, model_prior, groups):
+def decode_irec(args, model_prior, groups):
     bin_file_name = os.path.join(args.save_dir, f"kodim{str(args.image_id).zfill(2)}_bit.bin")
     with open(bin_file_name, 'rb') as f:  
         num_byte = f.read(2)  

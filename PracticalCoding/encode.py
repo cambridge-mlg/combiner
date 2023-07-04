@@ -11,7 +11,7 @@ import torchvision
 import utils
 from models import SmoothStd, SirenPosterior
 from PracticalCoding.partition import adjust_beta_with_mask
-from PracticalCoding.rec import iREC
+from PracticalCoding.irec import iREC
 
 def load_single_image(args):
     transform = torchvision.transforms.ToTensor()

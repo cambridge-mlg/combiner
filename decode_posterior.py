@@ -8,8 +8,7 @@ import numpy as np
 import torch
 
 import utils
-from PracticalCoding.encode import progressive_encode
-from PracticalCoding.decode import decode_rec
+from PracticalCoding.decode import decode_irec
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -72,7 +71,7 @@ def main():
     with open(groups_filename, "rb") as f:
         groups = pickle.load(f)
 
-    decode_rec(args, model_prior, groups)
+    decode_irec(args, model_prior, groups)
 
 if __name__ == "__main__":
     main()

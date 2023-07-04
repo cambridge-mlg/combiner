@@ -71,7 +71,7 @@ def progressive_encode(args, model_prior, groups):
         os.remove(bin_file_name)
         
     with open(bin_file_name, "wb") as f:
-        print(img_shape)
+        print(f"Image height: {img_shape[1]}, width{img_shape[1]}")
         f.write(struct.pack('H', img_shape[1]))
         f.write(struct.pack('H', img_shape[2]))
 
@@ -104,16 +104,18 @@ def progressive_encode(args, model_prior, groups):
 
                 loss = loss_mse + loss_kl_beta
                 loss.backward()    
-
-                # max_grad = max(p.grad.data.abs().max() for p in model.parameters() if p.grad is not None)
-                # print(f"Max gradient: {max_grad}")
                 nn.utils.clip_grad_value_(model.parameters(), clip_value=1.0)  # replace 1.0 with your desired clip_value
 
                 optimizer.step()
-                if step % 15 == 0:
-                    beta_list = adjust_beta_with_mask(args, groups, beta_list, kld_list, mask_list)
+                # if step % 15 == 0:
+                #     beta_list = adjust_beta_with_mask(args, groups, beta_list, kld_list, mask_list)
 
                 psnr = utils.get_clamped_psnr(x, features)
+
+            # to ensure each block requires approximately 16 bits.
+            if block_id % 10 == 0:
+                beta_list = adjust_beta_with_mask(args, groups, beta_list, kld_list, mask_list)
+
             if block_id % 5 == 0 or block_id == len(groups) - 1:
                 print('PSNR: %.3f, Bits_used: %.2f, Blocks: %d' % (psnr, bit_total, block_id + 1))
 
@@ -137,7 +139,6 @@ def encode_block(args, model, group, p_mu_list, p_std_list, mask_list, yhat_list
         std_p_rec[j] = p_std_list[layer_id][row, col]
 
     received_samples, received_index = iREC(args, mu_q_rec, std_q_rec, mu_p_rec, std_p_rec)
-
     for j in range(block_param_num):
         layer_id, index, _ = group[j]
         row, col = index // p_mu_list[layer_id].size(1), index % p_mu_list[layer_id].size(1)

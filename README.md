@@ -25,6 +25,7 @@ We recommend using cropped patches as training set to learn the model prior. The
 		|-- img2.png
 		...
 
+To align with the resolution of Kodak, the training images should be randomly cropped with 512x768 or 768x512 patches.
 
 ## Running the code
 
@@ -57,3 +58,17 @@ CUDA_VISIBLE_DEVICES=0 python -u decode_posterior.py -c=./cfgs/model_posterior_k
 ## Configuration
 
 You can adjust the hyper parameters of training and test settings by modifying the files in ./cfgs
+
+## Citation
+
+If you use this library for research purposes, please cite:
+
+```
+@article{combiner2023,
+  title={Compression with Bayesian Implicit Neural Representations},
+  author={Guo, Zongyu# and Flamich#, Gergely and He, Jiajun and Chen, Zhibo and Hern{\'a}ndez-Lobato, Jos{\'e} Miguel},
+  journal={arXiv preprint arXiv:2305.19185},
+  year={2023}
+}
+```
+

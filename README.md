@@ -66,7 +66,7 @@ If you use this library for research purposes, please cite:
 ```
 @article{combiner2023,
   title={Compression with Bayesian Implicit Neural Representations},
-  author={Guo, Zongyu# and Flamich#, Gergely and He, Jiajun and Chen, Zhibo and Hern{\'a}ndez-Lobato, Jos{\'e} Miguel},
+  author={Guo, Zongyu# and Flamich, Gergely# and He, Jiajun and Chen, Zhibo and Hern{\'a}ndez-Lobato, Jos{\'e} Miguel},
   journal={arXiv preprint arXiv:2305.19185},
   year={2023}
 }

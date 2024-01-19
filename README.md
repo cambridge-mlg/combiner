@@ -2,7 +2,9 @@
 
 Offical implementation of [Compression with Bayesian Implicit Neural Representations](https://arxiv.org/abs/2305.19185).
 
-And we are excited to have a follow-up powerful coding scheme: [RECOMBINER: Robust and Enhanced Compression with Bayesian Implicit Neural Representations](https://openreview.net/forum?id=VkWbxFrCC8), which can outperform autoencoder-based codecs on low-resolution images at low bitrates.
+And we are excited to have a follow-up powerful coding scheme accepted to ICLR2024, which can outperform autoencoder-based codecs on low-resolution images at low bitrates:
+
+[RECOMBINER: Robust and Enhanced Compression with Bayesian Implicit Neural Representations](https://openreview.net/forum?id=VkWbxFrCC8)
 
 ## Installation
 

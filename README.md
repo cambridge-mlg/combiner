@@ -1,6 +1,6 @@
 # Combiner
 
-Offical implementation of [Compression with Bayesian Implicit Neural Representations](https://arxiv.org/abs/2305.19185).
+Offical implementation of [Compression with Bayesian Implicit Neural Representations](https://arxiv.org/abs/2305.19185), NeurIPS 2023 spotlight.
 
 And we are excited to have a follow-up powerful coding scheme accepted to ICLR2024, which can outperform autoencoder-based codecs on low-resolution images at low bitrates:
 
@@ -68,11 +68,17 @@ You can adjust the hyper parameters of training and test settings by modifying t
 If you use this library for research purposes, please cite:
 
 ```
-@article{combiner2023,
-  title={Compression with Bayesian Implicit Neural Representations},
-  author={Guo, Zongyu# and Flamich, Gergely# and He, Jiajun and Chen, Zhibo and Hern{\'a}ndez-Lobato, Jos{\'e} Miguel},
-  journal={arXiv preprint arXiv:2305.19185},
-  year={2023}
+@inproceedings{combiner,
+  author       = {Zongyu Guo and
+                  Gergely Flamich and
+                  Jiajun He and
+                  Zhibo Chen and
+                  Jos{\'{e}} Miguel Hern{\'{a}}ndez{-}Lobato},
+  title        = {Compression with Bayesian Implicit Neural Representations},
+  booktitle    = {Advances in Neural Information Processing Systems 36: Annual Conference
+                  on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans,
+                  LA, USA, December 10 - 16, 2023},
+  year         = {2023}
 }
 ```
 
